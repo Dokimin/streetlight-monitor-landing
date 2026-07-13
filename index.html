@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title">Streetlight Monitor — Automatikus közvilágítás-felmérés</title>
+  <meta name="description" content="AI-alapú közvilágítás-felmérő rendszer kkv-knak, önkormányzatoknak és mérnököknek.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <span class="logo">Streetlight Monitor</span>
+      <nav>
+        <a href="#megoldas" data-i18n="nav.solution">Megoldás</a>
+        <a href="#funkciok" data-i18n="nav.features">Funkciók</a>
+        <a href="#kapcsolat" data-i18n="nav.contact">Kapcsolat</a>
+        <button id="lang-toggle" type="button" aria-label="Nyelv váltása">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 data-i18n="hero.title">Automatikus közvilágítás-felmérés mesterséges intelligenciával</h1>
+        <p class="lead" data-i18n="hero.subtitle">A rendszer autóra szerelt kamerával végigjárja a települést, felismeri és rögzíti minden lámpaoszlopot — pontos GPS-koordinátával, azonnal kereshető állapottal.</p>
+        <a class="btn btn-primary" href="#kapcsolat" data-i18n="hero.cta">Kérjen ajánlatot</a>
+      </div>
+    </section>
+
+    <section class="problem">
+      <div class="container">
+        <h2 data-i18n="problem.title">A mai közvilágítás-nyilvántartás nehézkes</h2>
+        <div class="grid grid-3">
+          <div class="card reveal">
+            <h3 data-i18n="problem.item1.title">Kézi bejárás</h3>
+            <p data-i18n="problem.item1.text">Az oszlopok állapotát emberi szemmel, gyalogosan vagy autóból, papíron kell rögzíteni.</p>
+          </div>
+          <div class="card reveal">
+            <h3 data-i18n="problem.item2.title">Szétszórt nyilvántartás</h3>
+            <p data-i18n="problem.item2.text">Excel-táblák, papírlapok — nehéz visszakeresni, melyik oszlop hol van és milyen állapotban.</p>
+          </div>
+          <div class="card reveal">
+            <h3 data-i18n="problem.item3.title">Lassú kiszállás-szervezés</h3>
+            <p data-i18n="problem.item3.text">A hibás lámpák listázása és a javítócsapat felé továbbítása időigényes, hibalehetőséggel teli folyamat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution" id="megoldas">
+      <div class="container">
+        <h2 data-i18n="solution.title">Hogyan működik</h2>
+        <ol class="steps">
+          <li class="reveal">
+            <h3 data-i18n="solution.step1.title">1. Kamerás felmérés</h3>
+            <p data-i18n="solution.step1.text">Egy autóra szerelt kamera és GPS-vevő végigrögzíti a település utcáit.</p>
+          </li>
+          <li class="reveal">
+            <h3 data-i18n="solution.step2.title">2. AI-alapú felismerés</h3>
+            <p data-i18n="solution.step2.text">A rendszer automatikusan felismeri és osztályozza az oszlopokat és lámpatesteket: forma, fényforrás, teljesítmény, izzótípus, világít-e.</p>
+          </li>
+          <li class="reveal">
+            <h3 data-i18n="solution.step3.title">3. Pontos rögzítés</h3>
+            <p data-i18n="solution.step3.text">Minden oszlop GPS-pontos koordinátával kerül az adatbázisba, duplikátumszűréssel — ugyanaz az oszlop nem szerepel kétszer.</p>
+          </li>
+          <li class="reveal">
+            <h3 data-i18n="solution.step4.title">4. Javítási munkafolyamat</h3>
+            <p data-i18n="solution.step4.text">A hibás lámpák összesítő listába kerülnek, exportálhatók Excelbe a terepi csapatnak.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="audience">
+      <div class="container">
+        <h2 data-i18n="audience.title">Kiknek szól</h2>
+        <div class="grid grid-3">
+          <div class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M21 7a4 4 0 0 1-5.6 3.66L8 18l-2-2 7.34-7.4A4 4 0 1 1 21 7z"/></svg></div>
+            <h3 data-i18n="audience.sme.title">KKV-k, karbantartó cégek</h3>
+            <p data-i18n="audience.sme.text">Gyors hibafelmérés, összesítő és Excel-export a kiszálló csapatnak — kevesebb papírmunka, gyorsabb reakció.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 21v-4h6v4M9 7h.01M9 11h.01M15 7h.01M15 11h.01"/></svg></div>
+            <h3 data-i18n="audience.municipality.title">Önkormányzatok</h3>
+            <p data-i18n="audience.municipality.text">Naprakész, teljes nyilvántartás minden oszlopról, ellenőrzött állapotokkal — bármikor visszakereshető.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 20 20 4M8 20l-4-4M20 8l-4-4M11 13l2 2M14 10l2 2"/></svg></div>
+            <h3 data-i18n="audience.engineer.title">Mérnökök, tervezők</h3>
+            <p data-i18n="audience.engineer.text">Pontos GPS-koordináta és részletes műszaki adat (típus, teljesítmény, fényforrás) minden lámpatesthez.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="funkciok">
+      <div class="container">
+        <h2 data-i18n="features.title">Funkciók</h2>
+        <div class="grid grid-3">
+          <div class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7 10 4h4l2 3"/><circle cx="12" cy="13.5" r="3.5"/></svg></div>
+            <h3 data-i18n="features.f1.title">Automatikus felismerés</h3>
+            <p data-i18n="features.f1.text">AI-alapú oszlop- és lámpatest-felismerés és -osztályozás videófelvételből.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+            <h3 data-i18n="features.f2.title">GPS-pontos helyadat</h3>
+            <p data-i18n="features.f2.text">Minden észlelt oszlophoz pontos koordináta kerül rögzítésre.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M2 13l10 5 10-5"/></svg></div>
+            <h3 data-i18n="features.f3.title">Duplikátumszűrés</h3>
+            <p data-i18n="features.f3.text">Térbeli szűrés gondoskodik róla, hogy ugyanaz az oszlop ne szerepeljen többször a nyilvántartásban.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg></div>
+            <h3 data-i18n="features.f4.title">Hiba-munkafolyamat</h3>
+            <p data-i18n="features.f4.text">Bejövő hiba → gallyazásra váró → javítva — nyomon követhető állapotok minden oszlophoz.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5M9 13h6M9 17h6M9 13v4"/></svg></div>
+            <h3 data-i18n="features.f5.title">Összesítők és Excel-export</h3>
+            <p data-i18n="features.f5.text">Kiszállási listák összeállítása és exportálása a terepi csapatoknak.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3 data-i18n="features.f6.title">Jogosultságkezelés</h3>
+            <p data-i18n="features.f6.text">Admin és dolgozó szerepkörök, biztonságos hozzáféréssel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kapcsolat">
+      <div class="container">
+        <h2 data-i18n="contact.title">Kérjen ajánlatot</h2>
+
+        <div class="faq">
+          <h3 data-i18n="faq.title">Gyakori kérdések</h3>
+          <details class="faq-item">
+            <summary data-i18n="faq.q1.q">Milyen felszerelés kell a felméréshez?</summary>
+            <p data-i18n="faq.q1.a">Egy autóra szerelhető kamera és GPS-vevő elég — nincs szükség speciális járműre vagy gyalogos bejárásra.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q2.q">Honnan tudjuk, hogy egy lámpa hibás?</summary>
+            <p data-i18n="faq.q2.a">A rendszer a felvétel alapján automatikusan felismeri, hogy egy lámpatest világít-e, és rögzíti az állapotát.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q3.q">Ha többször végigmegyünk ugyanazon az utcán, duplikálódnak az oszlopok?</summary>
+            <p data-i18n="faq.q3.a">Nem — a rendszer térbeli szűréssel felismeri, hogy ugyanarról az oszlopról van szó, és nem rögzíti kétszer.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q4.q">Hogyan jut el a hibás lámpák listája a kiszálló csapathoz?</summary>
+            <p data-i18n="faq.q4.a">A hibás tételekből összesítő hozható létre, amely Excel-fájlba exportálható a terepi csapat számára.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-i18n="faq.q5.q">Ki fér hozzá a rögzített adatokhoz?</summary>
+            <p data-i18n="faq.q5.a">Admin és dolgozó szerepkörök léteznek, így csak jogosult felhasználók férnek hozzá az adatokhoz.</p>
+          </details>
+        </div>
+
+        <p data-i18n="contact.subtitle">Töltse ki az alábbi űrlapot, és felvesszük Önnel a kapcsolatot.</p>
+        <form id="contact-form">
+          <label for="name" data-i18n="contact.form.name">Név</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="company" data-i18n="contact.form.company">Cég</label>
+          <input type="text" id="company" name="company">
+
+          <label for="email" data-i18n="contact.form.email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message" data-i18n="contact.form.message">Üzenet</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+
+          <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Küldés</button>
+        </form>
+        <p class="direct-contact"><span data-i18n="contact.direct">Vagy írjon közvetlenül: </span><a href="mailto:info@streetlight-monitor.hu">info@streetlight-monitor.hu</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p data-i18n="footer.text">&copy; 2026 Streetlight Monitor</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
