@@ -176,7 +176,15 @@ applyLanguage(currentLang);
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if (!prefersReducedMotion) {
+const roadmap = document.getElementById("roadmap");
+const roadmapFill = document.getElementById("roadmap-fill");
+const roadmapNodes = roadmap ? Array.from(roadmap.querySelectorAll(".roadmap-node")) : [];
+const NODE_THRESHOLDS = [0.125, 0.375, 0.625, 0.875];
+
+if (prefersReducedMotion) {
+  if (roadmapFill) roadmapFill.style.width = "100%";
+  roadmapNodes.forEach((node) => node.classList.add("lit"));
+} else {
   const parallaxEls = Array.from(document.querySelectorAll("[data-parallax]")).map((el) => ({
     el,
     factor: parseFloat(el.getAttribute("data-parallax")) || 0
@@ -184,11 +192,24 @@ if (!prefersReducedMotion) {
 
   let ticking = false;
 
-  function updateParallax() {
+  function updateRoadmap() {
+    if (!roadmap || !roadmapFill) return;
+    const rect = roadmap.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const raw = (vh - rect.top) / (rect.height + vh * 0.5);
+    const progress = Math.min(1, Math.max(0, raw));
+    roadmapFill.style.width = `${progress * 100}%`;
+    roadmapNodes.forEach((node, i) => {
+      node.classList.toggle("lit", progress >= NODE_THRESHOLDS[i]);
+    });
+  }
+
+  function updateOnScroll() {
     const scrollY = window.scrollY;
     parallaxEls.forEach(({ el, factor }) => {
       el.style.transform = `translateY(${scrollY * factor}px)`;
     });
+    updateRoadmap();
     ticking = false;
   }
 
@@ -196,14 +217,14 @@ if (!prefersReducedMotion) {
     "scroll",
     () => {
       if (!ticking) {
-        window.requestAnimationFrame(updateParallax);
+        window.requestAnimationFrame(updateOnScroll);
         ticking = true;
       }
     },
     { passive: true }
   );
 
-  updateParallax();
+  updateOnScroll();
 }
 
 if ("IntersectionObserver" in window) {

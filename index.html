@@ -9,9 +9,9 @@
 </head>
 <body>
   <div class="bg-decor" aria-hidden="true">
-    <div class="blob blob-amber" data-parallax="0.10"></div>
-    <div class="blob blob-teal" data-parallax="0.16"></div>
-    <div class="blob blob-blue" data-parallax="0.06"></div>
+    <div class="blob-wrapper" data-parallax="0.10"><div class="blob blob-amber"></div></div>
+    <div class="blob-wrapper" data-parallax="0.16"><div class="blob blob-teal"></div></div>
+    <div class="blob-wrapper" data-parallax="0.06"><div class="blob blob-blue"></div></div>
   </div>
 
   <header class="site-header">
@@ -156,24 +156,34 @@
     <section class="solution" id="megoldas">
       <div class="container">
         <h2 data-i18n="solution.title">Hogyan működik</h2>
-        <ol class="steps">
-          <li class="reveal">
-            <h3 data-i18n="solution.step1.title">1. Kamerás felmérés</h3>
-            <p data-i18n="solution.step1.text">Egy autóra szerelt kamera és GPS-vevő végigrögzíti a település utcáit.</p>
-          </li>
-          <li class="reveal">
-            <h3 data-i18n="solution.step2.title">2. AI-alapú felismerés</h3>
-            <p data-i18n="solution.step2.text">A rendszer automatikusan felismeri és osztályozza az oszlopokat és lámpatesteket: forma, fényforrás, teljesítmény, izzótípus, világít-e.</p>
-          </li>
-          <li class="reveal">
-            <h3 data-i18n="solution.step3.title">3. Pontos rögzítés</h3>
-            <p data-i18n="solution.step3.text">Minden oszlop GPS-pontos koordinátával kerül az adatbázisba, duplikátumszűréssel — ugyanaz az oszlop nem szerepel kétszer.</p>
-          </li>
-          <li class="reveal">
-            <h3 data-i18n="solution.step4.title">4. Javítási munkafolyamat</h3>
-            <p data-i18n="solution.step4.text">A hibás lámpák összesítő listába kerülnek, exportálhatók Excelbe a terepi csapatnak.</p>
-          </li>
-        </ol>
+
+        <div class="roadmap" id="roadmap">
+          <div class="roadmap-track">
+            <div class="roadmap-fill" id="roadmap-fill"></div>
+            <div class="roadmap-node" style="left: 12.5%"></div>
+            <div class="roadmap-node" style="left: 37.5%"></div>
+            <div class="roadmap-node" style="left: 62.5%"></div>
+            <div class="roadmap-node" style="left: 87.5%"></div>
+          </div>
+          <ol class="steps">
+            <li class="reveal">
+              <h3 data-i18n="solution.step1.title">1. Kamerás felmérés</h3>
+              <p data-i18n="solution.step1.text">Egy autóra szerelt kamera és GPS-vevő végigrögzíti a település utcáit.</p>
+            </li>
+            <li class="reveal">
+              <h3 data-i18n="solution.step2.title">2. AI-alapú felismerés</h3>
+              <p data-i18n="solution.step2.text">A rendszer automatikusan felismeri és osztályozza az oszlopokat és lámpatesteket: forma, fényforrás, teljesítmény, izzótípus, világít-e.</p>
+            </li>
+            <li class="reveal">
+              <h3 data-i18n="solution.step3.title">3. Pontos rögzítés</h3>
+              <p data-i18n="solution.step3.text">Minden oszlop GPS-pontos koordinátával kerül az adatbázisba, duplikátumszűréssel — ugyanaz az oszlop nem szerepel kétszer.</p>
+            </li>
+            <li class="reveal">
+              <h3 data-i18n="solution.step4.title">4. Javítási munkafolyamat</h3>
+              <p data-i18n="solution.step4.text">A hibás lámpák összesítő listába kerülnek, exportálhatók Excelbe a terepi csapatnak.</p>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 
