@@ -101,8 +101,7 @@ a { color: var(--accent-dark); }
 .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
 
 .hero {
-  padding: 110px 0 80px;
-  text-align: center;
+  padding: 96px 0 72px;
   position: relative;
   overflow: hidden;
   background-image: radial-gradient(circle, rgba(232, 150, 15, 0.16) 1.5px, transparent 1.5px);
@@ -114,24 +113,54 @@ a { color: var(--accent-dark); }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 0%, var(--bg) 90%);
+  background: linear-gradient(180deg, transparent 0%, var(--bg) 92%);
   pointer-events: none;
 }
 
 .hero .container { position: relative; z-index: 1; }
 
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-text {
+  flex: 1 1 420px;
+  text-align: left;
+}
+
+.hero-visual {
+  flex: 1 1 320px;
+  max-width: 480px;
+}
+
+.hero-visual svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
 .hero h1 {
-  font-size: 2.4rem;
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 2.3rem;
 }
 
 .hero .lead {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 640px;
-  margin: 20px auto 32px;
+  max-width: 520px;
+  margin: 20px 0 32px;
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text { text-align: center; }
+  .hero .lead { margin-left: auto; margin-right: auto; }
+  .hero-visual { max-width: 420px; }
 }
 
 .problem, .solution, .audience, .features, .contact {
@@ -139,6 +168,17 @@ a { color: var(--accent-dark); }
 }
 
 .problem, .features { background: var(--bg-alt); }
+
+.audience-visual {
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.audience-visual svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 .grid { display: grid; gap: 24px; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }

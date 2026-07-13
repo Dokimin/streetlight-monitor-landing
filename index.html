@@ -22,10 +22,108 @@
 
   <main>
     <section class="hero">
-      <div class="container">
-        <h1 data-i18n="hero.title">Automatikus közvilágítás-felmérés mesterséges intelligenciával</h1>
-        <p class="lead" data-i18n="hero.subtitle">A rendszer autóra szerelt kamerával végigjárja a települést, felismeri és rögzíti minden lámpaoszlopot — pontos GPS-koordinátával, azonnal kereshető állapottal.</p>
-        <a class="btn btn-primary" href="#kapcsolat" data-i18n="hero.cta">Kérjen ajánlatot</a>
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 data-i18n="hero.title">Automatikus közvilágítás-felmérés mesterséges intelligenciával</h1>
+          <p class="lead" data-i18n="hero.subtitle">A rendszer autóra szerelt kamerával végigjárja a települést, felismeri és rögzíti minden lámpaoszlopot — pontos GPS-koordinátával, azonnal kereshető állapottal.</p>
+          <a class="btn btn-primary" href="#kapcsolat" data-i18n="hero.cta">Kérjen ajánlatot</a>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 600 380" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0d1630"/>
+                <stop offset="100%" stop-color="#1c2b52"/>
+              </linearGradient>
+              <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffce6b" stop-opacity="0.85"/>
+                <stop offset="100%" stop-color="#ffce6b" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="glowGradSoft" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffce6b" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#ffce6b" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#7ee0c3" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#7ee0c3" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+
+            <rect x="0" y="0" width="600" height="380" fill="url(#skyGrad)"/>
+
+            <circle cx="60" cy="45" r="1.6" fill="#ffffff" opacity="0.7"/>
+            <circle cx="130" cy="70" r="1.2" fill="#ffffff" opacity="0.5"/>
+            <circle cx="220" cy="35" r="1.8" fill="#ffffff" opacity="0.8"/>
+            <circle cx="340" cy="60" r="1.3" fill="#ffffff" opacity="0.55"/>
+            <circle cx="480" cy="40" r="1.6" fill="#ffffff" opacity="0.7"/>
+            <circle cx="540" cy="80" r="1.2" fill="#ffffff" opacity="0.5"/>
+
+            <g opacity="0.55" fill="#141f3d">
+              <rect x="10" y="150" width="55" height="110"/>
+              <rect x="75" y="120" width="40" height="140"/>
+              <rect x="470" y="130" width="45" height="130"/>
+              <rect x="525" y="160" width="60" height="100"/>
+            </g>
+            <g opacity="0.35" fill="#ffce6b">
+              <rect x="22" y="170" width="8" height="8"/>
+              <rect x="42" y="190" width="8" height="8"/>
+              <rect x="88" y="145" width="8" height="8"/>
+              <rect x="88" y="175" width="8" height="8"/>
+              <rect x="482" y="155" width="8" height="8"/>
+              <rect x="540" y="185" width="8" height="8"/>
+              <rect x="558" y="210" width="8" height="8"/>
+            </g>
+
+            <rect x="0" y="260" width="600" height="90" fill="#232a3d"/>
+            <g fill="#3a4257">
+              <rect x="20" y="303" width="40" height="6" rx="3"/>
+              <rect x="100" y="303" width="40" height="6" rx="3"/>
+              <rect x="180" y="303" width="40" height="6" rx="3"/>
+              <rect x="380" y="303" width="40" height="6" rx="3"/>
+              <rect x="460" y="303" width="40" height="6" rx="3"/>
+              <rect x="540" y="303" width="40" height="6" rx="3"/>
+            </g>
+
+            <g>
+              <circle cx="140" cy="200" r="46" fill="url(#glowGradSoft)"/>
+              <rect x="137" y="200" width="6" height="70" fill="#3a4257"/>
+              <path d="M118 196 Q140 178 162 196 L156 206 Q140 194 124 206 Z" fill="#3a4257"/>
+            </g>
+
+            <g>
+              <circle cx="330" cy="185" r="58" fill="url(#glowGrad)"/>
+              <rect x="326" y="185" width="8" height="85" fill="#4a5372"/>
+              <path d="M302 180 Q330 158 358 180 L350 192 Q330 176 310 192 Z" fill="#4a5372"/>
+              <path d="M330 170 L330 40" stroke="url(#beamGrad)" stroke-width="90" stroke-linecap="round" opacity="0.5"/>
+            </g>
+
+            <g>
+              <circle cx="490" cy="195" r="40" fill="url(#glowGradSoft)"/>
+              <rect x="487" y="195" width="6" height="65" fill="#3a4257"/>
+              <path d="M470 191 Q490 175 510 191 L504 200 Q490 190 476 200 Z" fill="#3a4257"/>
+            </g>
+
+            <g transform="translate(150 230)">
+              <rect x="0" y="18" width="150" height="34" rx="10" fill="#e8960f"/>
+              <path d="M14 18 L28 0 L108 0 L128 18 Z" fill="#f5a623"/>
+              <circle cx="34" cy="52" r="14" fill="#16213a"/>
+              <circle cx="34" cy="52" r="6" fill="#5b6472"/>
+              <circle cx="116" cy="52" r="14" fill="#16213a"/>
+              <circle cx="116" cy="52" r="6" fill="#5b6472"/>
+              <rect x="40" y="4" width="26" height="10" rx="2" fill="#16213a"/>
+              <circle cx="53" cy="9" r="3" fill="#7ee0c3"/>
+              <path d="M53 6 L96 -34" stroke="#7ee0c3" stroke-width="2" stroke-dasharray="3 5" opacity="0.8"/>
+              <circle cx="70" cy="-13" r="2.4" fill="#7ee0c3"/>
+              <circle cx="86" cy="-27" r="2.4" fill="#7ee0c3"/>
+            </g>
+
+            <g transform="translate(246 152)">
+              <path d="M20 34 C20 15 34 2 50 2 C66 2 80 15 80 34 C80 55 50 78 50 78 C50 78 20 55 20 34 Z" fill="#f5a623"/>
+              <circle cx="50" cy="32" r="15" fill="#fff8ec"/>
+              <path d="M43 32 L48 38 L58 25" stroke="#e8960f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+          </svg>
+        </div>
       </div>
     </section>
 
@@ -76,6 +174,64 @@
     <section class="audience">
       <div class="container">
         <h2 data-i18n="audience.title">Kiknek szól</h2>
+
+        <div class="audience-visual" aria-hidden="true">
+          <svg viewBox="0 0 600 200" role="img" aria-hidden="true">
+            <defs>
+              <radialGradient id="pinPulse" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#e8960f" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#e8960f" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="badgeAmber" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#e8960f" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#e8960f" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="badgeBlue" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#3b6bd6" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#3b6bd6" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="badgeGreen" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#2fa583" stop-opacity="0.16"/>
+                <stop offset="100%" stop-color="#2fa583" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <path d="M110 130 C160 60 200 45 300 40" fill="none" stroke="#d8d2c2" stroke-width="1.5" stroke-dasharray="3 6"/>
+            <path d="M300 40 C400 45 440 60 490 130" fill="none" stroke="#d8d2c2" stroke-width="1.5" stroke-dasharray="3 6"/>
+
+            <circle cx="300" cy="40" r="34" fill="url(#pinPulse)"/>
+            <g transform="translate(280 16)">
+              <path d="M20 44 C20 25 32 14 40 14 C48 14 60 25 60 44 C60 60 40 78 40 78 C40 78 20 60 20 44 Z" fill="#e8960f"/>
+              <circle cx="40" cy="42" r="12" fill="#fff8ec"/>
+            </g>
+
+            <g transform="translate(60 90)">
+              <circle cx="50" cy="50" r="48" fill="url(#badgeAmber)"/>
+              <rect x="20" y="55" width="60" height="34" rx="6" fill="#e8960f"/>
+              <rect x="20" y="55" width="60" height="10" rx="4" fill="#c9820c"/>
+              <path d="M38 55 v-10 a12 12 0 0 1 24 0 v10" fill="none" stroke="#c9820c" stroke-width="6"/>
+              <rect x="44" y="66" width="12" height="12" rx="2" fill="#fff8ec"/>
+            </g>
+
+            <g transform="translate(250 88)">
+              <circle cx="50" cy="52" r="48" fill="url(#badgeBlue)"/>
+              <rect x="16" y="60" width="68" height="32" fill="#3b6bd6"/>
+              <path d="M12 60 L50 32 L88 60 Z" fill="#4c7bea"/>
+              <rect x="30" y="68" width="8" height="16" fill="#e9eefb"/>
+              <rect x="46" y="68" width="8" height="16" fill="#e9eefb"/>
+              <rect x="62" y="68" width="8" height="16" fill="#e9eefb"/>
+            </g>
+
+            <g transform="translate(440 90)">
+              <circle cx="50" cy="50" r="48" fill="url(#badgeGreen)"/>
+              <rect x="22" y="58" width="56" height="36" rx="4" fill="#ffffff"/>
+              <path d="M28 66 h44 M28 76 h44 M28 86 h30" stroke="#2fa583" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="66" cy="52" r="13" fill="none" stroke="#2fa583" stroke-width="4"/>
+              <path d="M66 45 v7 l5 4" stroke="#2fa583" stroke-width="3" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+        </div>
+
         <div class="grid grid-3">
           <div class="card reveal">
             <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M21 7a4 4 0 0 1-5.6 3.66L8 18l-2-2 7.34-7.4A4 4 0 1 1 21 7z"/></svg></div>
