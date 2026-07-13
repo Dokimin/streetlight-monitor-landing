@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="meta.title">Streetlight Monitor — Automatikus közvilágítás-felmérés</title>
   <meta name="description" content="AI-alapú közvilágítás-felmérő rendszer kkv-knak, önkormányzatoknak és mérnököknek.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,11 +33,13 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
+          <span class="hero-eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">AI-vezérelt közvilágítás-felmérés</span></span>
           <h1 data-i18n="hero.title">Automatikus közvilágítás-felmérés mesterséges intelligenciával</h1>
           <p class="lead" data-i18n="hero.subtitle">A rendszer autóra szerelt kamerával végigjárja a települést, felismeri és rögzíti minden lámpaoszlopot — pontos GPS-koordinátával, azonnal kereshető állapottal.</p>
           <a class="btn btn-primary" href="#kapcsolat" data-i18n="hero.cta">Kérjen ajánlatot</a>
         </div>
         <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual-inner">
           <svg viewBox="0 0 600 380" role="img" aria-hidden="true">
             <defs>
               <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
@@ -129,12 +134,14 @@
               <path d="M43 32 L48 38 L58 25" stroke="#e8960f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             </g>
           </svg>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="problem">
       <div class="container">
+        <span class="section-eyebrow" data-i18n="problem.eyebrow">A kihívás</span>
         <h2 data-i18n="problem.title">A mai közvilágítás-nyilvántartás nehézkes</h2>
         <div class="grid grid-3">
           <div class="card reveal">
@@ -155,6 +162,7 @@
 
     <section class="solution" id="megoldas">
       <div class="container">
+        <span class="section-eyebrow" data-i18n="solution.eyebrow">A folyamat</span>
         <h2 data-i18n="solution.title">Hogyan működik</h2>
 
         <div class="roadmap" id="roadmap">
@@ -189,6 +197,7 @@
 
     <section class="audience">
       <div class="container">
+        <span class="section-eyebrow" data-i18n="audience.eyebrow">Kiknek ajánljuk</span>
         <h2 data-i18n="audience.title">Kiknek szól</h2>
 
         <div class="audience-visual" aria-hidden="true">
@@ -212,8 +221,8 @@
               </radialGradient>
             </defs>
 
-            <path d="M110 130 C160 60 200 45 300 40" fill="none" stroke="#d8d2c2" stroke-width="1.5" stroke-dasharray="3 6"/>
-            <path d="M300 40 C400 45 440 60 490 130" fill="none" stroke="#d8d2c2" stroke-width="1.5" stroke-dasharray="3 6"/>
+            <path d="M110 130 C160 60 200 45 300 40" fill="none" stroke="#59e0c9" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.55"/>
+            <path d="M300 40 C400 45 440 60 490 130" fill="none" stroke="#59e0c9" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.55"/>
 
             <circle cx="300" cy="40" r="34" fill="url(#pinPulse)"/>
             <g transform="translate(280 16)">
@@ -223,6 +232,7 @@
 
             <g transform="translate(60 90)">
               <circle cx="50" cy="50" r="48" fill="url(#badgeAmber)"/>
+              <circle cx="50" cy="50" r="47" fill="none" stroke="#e8960f" stroke-width="1" opacity="0.4"/>
               <rect x="20" y="55" width="60" height="34" rx="6" fill="#e8960f"/>
               <rect x="20" y="55" width="60" height="10" rx="4" fill="#c9820c"/>
               <path d="M38 55 v-10 a12 12 0 0 1 24 0 v10" fill="none" stroke="#c9820c" stroke-width="6"/>
@@ -231,6 +241,7 @@
 
             <g transform="translate(250 88)">
               <circle cx="50" cy="52" r="48" fill="url(#badgeBlue)"/>
+              <circle cx="50" cy="52" r="47" fill="none" stroke="#7c8bff" stroke-width="1" opacity="0.4"/>
               <rect x="16" y="60" width="68" height="32" fill="#3b6bd6"/>
               <path d="M12 60 L50 32 L88 60 Z" fill="#4c7bea"/>
               <rect x="30" y="68" width="8" height="16" fill="#e9eefb"/>
@@ -240,6 +251,7 @@
 
             <g transform="translate(440 90)">
               <circle cx="50" cy="50" r="48" fill="url(#badgeGreen)"/>
+              <circle cx="50" cy="50" r="47" fill="none" stroke="#59e0c9" stroke-width="1" opacity="0.4"/>
               <rect x="22" y="58" width="56" height="36" rx="4" fill="#ffffff"/>
               <path d="M28 66 h44 M28 76 h44 M28 86 h30" stroke="#2fa583" stroke-width="3" stroke-linecap="round"/>
               <circle cx="66" cy="52" r="13" fill="none" stroke="#2fa583" stroke-width="4"/>
@@ -270,6 +282,7 @@
 
     <section class="features" id="funkciok">
       <div class="container">
+        <span class="section-eyebrow" data-i18n="features.eyebrow">Képességek</span>
         <h2 data-i18n="features.title">Funkciók</h2>
         <div class="grid grid-3">
           <div class="card reveal">
@@ -308,6 +321,7 @@
 
     <section class="contact" id="kapcsolat">
       <div class="container">
+        <span class="section-eyebrow" data-i18n="contact.eyebrow">Kezdjük el</span>
         <h2 data-i18n="contact.title">Kérjen ajánlatot</h2>
 
         <div class="faq">
