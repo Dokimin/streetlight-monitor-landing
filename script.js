@@ -174,6 +174,38 @@ document.getElementById("contact-form").addEventListener("submit", (event) => {
 
 applyLanguage(currentLang);
 
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!prefersReducedMotion) {
+  const parallaxEls = Array.from(document.querySelectorAll("[data-parallax]")).map((el) => ({
+    el,
+    factor: parseFloat(el.getAttribute("data-parallax")) || 0
+  }));
+
+  let ticking = false;
+
+  function updateParallax() {
+    const scrollY = window.scrollY;
+    parallaxEls.forEach(({ el, factor }) => {
+      el.style.transform = `translateY(${scrollY * factor}px)`;
+    });
+    ticking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  updateParallax();
+}
+
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
     (entries) => {
