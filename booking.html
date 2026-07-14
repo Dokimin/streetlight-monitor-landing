@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="booking.meta.title">Időpont foglalása — Streetlight Monitor</title>
+  <meta name="description" content="Foglaljon időpontot egy rövid, ingyenes bemutatóra a Streetlight Monitor csapatával.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-decor" aria-hidden="true">
+    <div class="blob-wrapper" data-parallax="0.10"><div class="blob blob-amber"></div></div>
+    <div class="blob-wrapper" data-parallax="0.16"><div class="blob blob-teal"></div></div>
+    <div class="blob-wrapper" data-parallax="0.06"><div class="blob blob-blue"></div></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" style="text-decoration:none">Streetlight Monitor</a>
+      <nav>
+        <a href="index.html#megoldas" data-i18n="nav.solution">Megoldás</a>
+        <a href="index.html#funkciok" data-i18n="nav.features">Funkciók</a>
+        <a href="index.html#kapcsolat" data-i18n="nav.contact">Kapcsolat</a>
+        <button id="lang-toggle" type="button" aria-label="Nyelv váltása">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 24px;">
+      <div class="container" style="text-align:center;">
+        <span class="hero-eyebrow"><span class="dot"></span><span data-i18n="booking.eyebrow">Ingyenes bemutató</span></span>
+        <h1 data-i18n="booking.title">Foglaljon időpontot egy bemutatóra</h1>
+        <p class="lead" data-i18n="booking.subtitle" style="margin-left:auto;margin-right:auto;">Válasszon egy Önnek megfelelő időpontot — 30 perc alatt megmutatjuk, hogyan segít a rendszer az Ön csapatának.</p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="card" style="max-width: 760px; margin: 0 auto; padding: 12px;">
+          <div id="booking-embed-wrap">
+            <iframe
+              id="booking-iframe"
+              title="Google Calendar időpontfoglalás"
+              style="width:100%; height:640px; border:0; border-radius: 12px; display:none;"
+              loading="lazy"
+            ></iframe>
+            <div id="booking-placeholder" style="padding: 48px 24px; text-align:center;">
+              <p data-i18n="booking.placeholder" style="color: var(--text-muted);">A foglalási felület hamarosan elérhető. Kérjük, keressen minket közvetlenül a Kapcsolat oldalon.</p>
+            </div>
+          </div>
+          <div style="text-align:center; margin-top: 16px;">
+            <a id="booking-fallback-link" class="btn btn-primary" href="index.html#kapcsolat" data-i18n="booking.open_new_tab" rel="noopener">Megnyitás új lapon</a>
+          </div>
+        </div>
+        <p style="text-align:center; margin-top: 24px;">
+          <a href="index.html" data-i18n="booking.back">← Vissza a főoldalra</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p data-i18n="footer.text">&copy; 2026 Streetlight Monitor</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
