@@ -8,6 +8,14 @@ const translations = {
     "hero.title": "Automatikus közvilágítás-felmérés mesterséges intelligenciával",
     "hero.subtitle": "A rendszer autóra szerelt kamerával végigjárja a települést, felismeri és rögzíti minden lámpaoszlopot — pontos GPS-koordinátával, azonnal kereshető állapottal.",
     "hero.cta": "Kérjen ajánlatot",
+    "hero.cta2": "Időpont foglalása",
+    "booking.meta.title": "Időpont foglalása — Streetlight Monitor",
+    "booking.eyebrow": "Ingyenes bemutató",
+    "booking.title": "Foglaljon időpontot egy bemutatóra",
+    "booking.subtitle": "Válasszon egy Önnek megfelelő időpontot — 30 perc alatt megmutatjuk, hogyan segít a rendszer az Ön csapatának.",
+    "booking.placeholder": "A foglalási felület hamarosan elérhető. Kérjük, keressen minket közvetlenül a Kapcsolat oldalon.",
+    "booking.open_new_tab": "Megnyitás új lapon",
+    "booking.back": "← Vissza a főoldalra",
     "problem.eyebrow": "A kihívás",
     "problem.title": "A mai közvilágítás-nyilvántartás nehézkes",
     "problem.item1.title": "Kézi bejárás",
@@ -61,12 +69,8 @@ const translations = {
     "faq.q4.a": "A hibás tételekből összesítő hozható létre, amely Excel-fájlba exportálható a terepi csapat számára.",
     "faq.q5.q": "Ki fér hozzá a rögzített adatokhoz?",
     "faq.q5.a": "Admin és dolgozó szerepkörök léteznek, így csak jogosult felhasználók férnek hozzá az adatokhoz.",
-    "contact.subtitle": "Töltse ki az alábbi űrlapot, és felvesszük Önnel a kapcsolatot.",
-    "contact.form.name": "Név",
-    "contact.form.company": "Cég",
-    "contact.form.email": "Email",
-    "contact.form.message": "Üzenet",
-    "contact.form.submit": "Küldés",
+    "contact.subtitle": "Foglaljon egy rövid, ingyenes bemutatót — 30 perc alatt megmutatjuk, hogyan segít a rendszer.",
+    "contact.cta": "Időpont foglalása",
     "contact.direct": "Vagy írjon közvetlenül: ",
     "footer.text": "© 2026 Streetlight Monitor"
   },
@@ -79,6 +83,14 @@ const translations = {
     "hero.title": "Automated street lighting survey powered by AI",
     "hero.subtitle": "The system drives a camera-equipped vehicle through the town, detecting and recording every light pole — with precise GPS coordinates and instantly searchable status.",
     "hero.cta": "Request a quote",
+    "hero.cta2": "Book a time",
+    "booking.meta.title": "Book a meeting — Streetlight Monitor",
+    "booking.eyebrow": "Free demo",
+    "booking.title": "Book a time for a demo",
+    "booking.subtitle": "Pick a time that works for you — in 30 minutes we'll show you how the system helps your team.",
+    "booking.placeholder": "The booking widget will be available soon. Please reach out to us directly on the Contact page.",
+    "booking.open_new_tab": "Open in a new tab",
+    "booking.back": "← Back to the homepage",
     "problem.eyebrow": "The challenge",
     "problem.title": "Today's street lighting records are hard to manage",
     "problem.item1.title": "Manual inspection",
@@ -132,18 +144,17 @@ const translations = {
     "faq.q4.a": "A work list can be built from the faulty items and exported to Excel for the field crew.",
     "faq.q5.q": "Who has access to the recorded data?",
     "faq.q5.a": "Admin and worker roles exist, so only authorized users can access the data.",
-    "contact.subtitle": "Fill out the form below and we'll get in touch.",
-    "contact.form.name": "Name",
-    "contact.form.company": "Company",
-    "contact.form.email": "Email",
-    "contact.form.message": "Message",
-    "contact.form.submit": "Send",
+    "contact.subtitle": "Book a short, free demo — in 30 minutes we'll show you how the system helps.",
+    "contact.cta": "Book a time",
     "contact.direct": "Or write to us directly: ",
     "footer.text": "© 2026 Streetlight Monitor"
   }
 };
 
-const CONTACT_EMAIL = "info@streetlight-monitor.hu";
+// Set once the Google Calendar Appointment Schedule is created — see the "Share" link
+// on the schedule in Google Calendar. Until replaced, booking.html shows a placeholder.
+const BOOKING_URL = "REPLACE_ME_WITH_GOOGLE_CALENDAR_APPOINTMENT_URL";
+
 let currentLang = "hu";
 
 function applyLanguage(lang) {
@@ -155,34 +166,38 @@ function applyLanguage(lang) {
     }
   });
   document.documentElement.lang = lang;
-  document.getElementById("lang-toggle").textContent = lang === "hu" ? "EN" : "HU";
+  const toggle = document.getElementById("lang-toggle");
+  if (toggle) toggle.textContent = lang === "hu" ? "EN" : "HU";
   currentLang = lang;
 }
 
-document.getElementById("lang-toggle").addEventListener("click", () => {
-  applyLanguage(currentLang === "hu" ? "en" : "hu");
-});
+const langToggle = document.getElementById("lang-toggle");
+if (langToggle) {
+  langToggle.addEventListener("click", () => {
+    applyLanguage(currentLang === "hu" ? "en" : "hu");
+  });
+}
 
-document.getElementById("contact-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const form = event.target;
-  const name = form.name.value.trim();
-  const company = form.company.value.trim();
-  const email = form.email.value.trim();
-  const message = form.message.value.trim();
+const bookingIframe = document.getElementById("booking-iframe");
+const bookingPlaceholder = document.getElementById("booking-placeholder");
+const bookingFallbackLink = document.getElementById("booking-fallback-link");
+const bookingConfigured = !BOOKING_URL.includes("REPLACE_ME");
 
-  const subject = encodeURIComponent(`Ajánlatkérés — ${name}`);
-  const bodyLines = [
-    `Név: ${name}`,
-    `Cég: ${company}`,
-    `Email: ${email}`,
-    "",
-    message
-  ];
-  const body = encodeURIComponent(bodyLines.join("\n"));
+if (bookingIframe && bookingPlaceholder) {
+  if (bookingConfigured) {
+    bookingIframe.src = BOOKING_URL;
+    bookingIframe.style.display = "block";
+    bookingPlaceholder.style.display = "none";
+  } else {
+    bookingIframe.style.display = "none";
+    bookingPlaceholder.style.display = "block";
+  }
+}
 
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-});
+if (bookingFallbackLink && bookingConfigured) {
+  bookingFallbackLink.href = BOOKING_URL;
+  bookingFallbackLink.target = "_blank";
+}
 
 applyLanguage(currentLang);
 

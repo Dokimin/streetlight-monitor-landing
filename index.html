@@ -36,7 +36,10 @@
           <span class="hero-eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">AI-vezérelt közvilágítás-felmérés</span></span>
           <h1 data-i18n="hero.title">Automatikus közvilágítás-felmérés mesterséges intelligenciával</h1>
           <p class="lead" data-i18n="hero.subtitle">A rendszer autóra szerelt kamerával végigjárja a települést, felismeri és rögzíti minden lámpaoszlopot — pontos GPS-koordinátával, azonnal kereshető állapottal.</p>
-          <a class="btn btn-primary" href="#kapcsolat" data-i18n="hero.cta">Kérjen ajánlatot</a>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="#kapcsolat" data-i18n="hero.cta">Kérjen ajánlatot</a>
+            <a class="btn btn-secondary" href="booking.html" data-i18n="hero.cta2">Időpont foglalása</a>
+          </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
           <div class="hero-visual-inner">
@@ -348,22 +351,8 @@
           </details>
         </div>
 
-        <p data-i18n="contact.subtitle">Töltse ki az alábbi űrlapot, és felvesszük Önnel a kapcsolatot.</p>
-        <form id="contact-form">
-          <label for="name" data-i18n="contact.form.name">Név</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="company" data-i18n="contact.form.company">Cég</label>
-          <input type="text" id="company" name="company">
-
-          <label for="email" data-i18n="contact.form.email">Email</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="message" data-i18n="contact.form.message">Üzenet</label>
-          <textarea id="message" name="message" rows="4"></textarea>
-
-          <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Küldés</button>
-        </form>
+        <p data-i18n="contact.subtitle">Foglaljon egy rövid, ingyenes bemutatót — 30 perc alatt megmutatjuk, hogyan segít a rendszer.</p>
+        <a class="btn btn-primary" href="booking.html" data-i18n="contact.cta">Időpont foglalása</a>
         <p class="direct-contact"><span data-i18n="contact.direct">Vagy írjon közvetlenül: </span><a href="mailto:info@streetlight-monitor.hu">info@streetlight-monitor.hu</a></p>
       </div>
     </section>
